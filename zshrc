@@ -332,6 +332,14 @@ zstyle ':completion:*:history-words' menu yes
 
 ########################################
 # Prompt
+
+# mean prompt theme
+# by Bryan Gilbert: https://github.com/gilbertw1/mean
+#
+# Based on Lean by Miek Gieben: https://github.com/miekg/lean
+#   Based on Pure by Sindre Sorhus: https://github.com/sindresorhus/pure
+#
+# MIT License
 PROMPT_MEAN_TMUX=${PROMPT_MEAN_TMUX-"t"}
 
 # turns seconds into human readable time, 165392 => 1d 21h 56m 32s
