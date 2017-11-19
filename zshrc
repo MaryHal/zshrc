@@ -493,3 +493,5 @@ zle -N zle-keymap-select
 prompt_mean_setup "$@"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
