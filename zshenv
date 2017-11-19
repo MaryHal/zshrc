@@ -23,10 +23,9 @@ export DJVUVIEWER='zathura'
 
 export PAGER='less'
 
-export GOPATH=~/.go
-export PATH=~/.go/bin:$PATH
-
 export FZF_TMUX=1
+
+export GOPATH=~/.go
 
 # export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
