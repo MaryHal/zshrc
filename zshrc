@@ -340,7 +340,7 @@ zstyle ':completion:*:history-words' menu yes
 #   Based on Pure by Sindre Sorhus: https://github.com/sindresorhus/pure
 #
 # MIT License
-PROMPT_MEAN_TMUX=${PROMPT_MEAN_TMUX-"t"}
+PROMPT_MEAN_TMUX=${PROMPT_MEAN_TMUX-" t"}
 
 # turns seconds into human readable time, 165392 => 1d 21h 56m 32s
 prompt_mean_human_time() {
