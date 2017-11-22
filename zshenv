@@ -30,9 +30,8 @@ export GOPATH=~/.go
 # export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export FZF_DEFAULT_COMMAND='fd --type f -L'
+export FZF_ALT_C_COMMAND='fd -t d .'
 export FZF_DEFAULT_OPTS='-x -m --sort 10000 --color=16,bg+:-1,hl:12,hl+:12'
-command -v blsd > /dev/null && export FZF_ALT_C_COMMAND='blsd'
-command -v tree > /dev/null && export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -$LINES'"
 
 export QT_STYLE_OVERRIDE=GTK+
 
