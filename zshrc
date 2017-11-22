@@ -113,6 +113,11 @@ alias vimsession='vim -S '
 
 alias o='xdg-open'
 
+eo()
+{
+    emacsclient -n $@ --no-wait 1> /dev/null 2> /dev/null & disown
+}
+
 ########################################
 # Suffix Aliases 
 # Video/Audio aliases
