@@ -9,32 +9,6 @@ export SAVEHIST=10000
 ########################################
 # Key Bindings
 
-# Keys.
-case $TERM in
-    rxvt*)
-    bindkey "^[[7~" beginning-of-line #Home key
-    bindkey "^[[8~" end-of-line #End key
-    bindkey "^[[3~" delete-char #Del key
-    bindkey "^[[A" history-beginning-search-backward #Up Arrow
-    bindkey "^[[B" history-beginning-search-forward #Down Arrow
-    bindkey "^[Oc" forward-word # control + right arrow
-    bindkey "^[Od" backward-word # control + left arrow
-    bindkey "^H" backward-kill-word # control + backspace
-    bindkey "^[[3^" kill-word # control + delete
-
-    # Allow shift-tab to reverse in menu completion
-    bindkey '^[[Z' reverse-menu-complete
-    ;;
-
-    linux)
-    bindkey "^[[1~" beginning-of-line #Home key
-    bindkey "^[[4~" end-of-line #End key
-    bindkey "^[[3~" delete-char #Del key
-    bindkey "^[[A" history-beginning-search-backward
-    bindkey "^[[B" history-beginning-search-forward
-    ;;
-esac
-
 #show mode of the vi-mode of zsh
 #function zle-line-init zle-keymap-select {
 #    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
@@ -45,6 +19,44 @@ esac
 #zle -N zle-keymap-select
 
 bindkey -e
+
+case $TERM in
+    linux)
+    bindkey "^[[1~" beginning-of-line #Home key
+    bindkey "^[[4~" end-of-line #End key
+    bindkey "^[[3~" delete-char #Del key
+    bindkey "^[[A" history-beginning-search-backward
+    bindkey "^[[B" history-beginning-search-forward
+    ;;
+
+    xterm-256color)
+    bindkey "^[[H" beginning-of-line #Home key
+    bindkey "^[[F" end-of-line #End key
+    bindkey "^[[3~" delete-char #Del key
+    bindkey "^[[A" history-beginning-search-backward #Up Arrow
+    bindkey "^[[B" history-beginning-search-forward #Down Arrow
+    bindkey "^[[1;5C" forward-word # control + right arrow
+    bindkey "^[[1;5D" backward-word # control + left arrow
+    bindkey "^H" backward-kill-word # control + backspace
+
+    # Allow shift-tab to reverse in menu completion
+    bindkey "^[[Z" reverse-menu-complete
+    ;;
+
+    screen-256color)
+    bindkey "^[[1~" beginning-of-line #Home key
+    bindkey "^[[4~" end-of-line #End key
+    bindkey "^[[3~" delete-char #Del key
+    bindkey "^[[A" history-beginning-search-backward #Up Arrow
+    bindkey "^[[B" history-beginning-search-forward #Down Arrow
+    bindkey "^[[1;5C" forward-word # control + right arrow
+    bindkey "^[[1;5D" backward-word # control + left arrow
+    bindkey "^H" backward-kill-word # control + backspace
+
+    # Allow shift-tab to reverse in menu completion
+    bindkey "^[[Z" reverse-menu-complete
+    ;;
+esac
 
 ########################################
 # Colors in TTY
@@ -72,6 +84,8 @@ setopt noflowcontrol
 # Exports
 
 # In .zshenv
+
+export PATH=$PATH:$GOPATH/bin
 
 ########################################
 # Aliases
@@ -102,7 +116,7 @@ export GREPCOLOR="1;32"    # ditto here
 alias grep='grep --color=auto' 
 
 # get xprop CLASS and NAME
-alias xp='xprop | ack "WM_CLASS"'
+alias xp='xprop | grep "WM_CLASS"'
 #alias fixres='xrandr --size 1280x800'
 
 alias weechat='weechat-curses'
