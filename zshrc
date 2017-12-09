@@ -78,6 +78,7 @@ autoload -U zmv
 setopt no_clobber
 setopt extendedGlob
 setopt hist_ignore_dups
+setopt histignorespace
 setopt noflowcontrol
 
 ########################################
