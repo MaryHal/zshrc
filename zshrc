@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 source /etc/profile
 #
 #######################################
@@ -121,8 +123,6 @@ alias xp='xprop | grep "WM_CLASS"'
 #alias fixres='xrandr --size 1280x800'
 
 alias weechat='weechat-curses'
-#alias wifi='wicd-curses'
-alias tnethack='urxvtc -tn "rxvt-unicode" -e telnet nethack.alt.org & disown'
 
 alias vimsession='vim -S '
 
@@ -158,8 +158,8 @@ alias -s pl='perl'
 # Text Editor stuff
 alias -s {txt,log}=$EDITOR
 
-# Windows progs
-#alias -s exe=wine
+# Windows
+alias -s exe=wine
 
 
 #######################################
@@ -515,4 +515,4 @@ prompt_mean_setup "$@"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
+# if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
