@@ -503,12 +503,17 @@ prompt_mean_setup() {
     [[ "$TMUX" != '' ]] && prompt_mean_tmux=$PROMPT_MEAN_TMUX
 }
 
+
 function zle-line-init zle-keymap-select {
     prompt_mean_precmd
     zle reset-prompt
+    echoti smkx
 }
 
+function zle-line-finish () { echoti rmkx }
+
 zle -N zle-line-init
+zle -N zle-line-finish
 zle -N zle-keymap-select
 
 prompt_mean_setup "$@"
