@@ -16,7 +16,7 @@ export IMGVIEWER='sxiv'
 export VIDEOPLAYER='mpv'
 export AUDIOPLAYER='mpv'
 export BROWSER='firefox'
-export TERMINAL='alacritty'
+export TERMINAL='st'
 
 export PDFVIEWER='zathura'
 export DJVUVIEWER='zathura'
